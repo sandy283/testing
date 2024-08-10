@@ -15,7 +15,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 # Load the CLIP model and move it to the GPU
 @st.cache_resource
 def load_model():
-    model, preprocess = clip.load("ViT-B/32", device=device)
+    model, preprocess = clip.load("ViT-L/14@336px", device=device)
     model.eval()
     return model, preprocess
 
